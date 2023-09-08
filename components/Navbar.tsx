@@ -1,8 +1,7 @@
-import LogoutButton from "@/components/LogoutButton";
 import Link from "next/link";
 import { ModeToggle } from "@/components/ModeToggle";
 import { Button } from "@/components/ui/button";
-import { MenuIcon } from "lucide-react";
+import { SidebarToggle } from "@/components/SidebarToggle";
 
 type UserProps = {
   email: string | undefined;
@@ -11,9 +10,7 @@ type UserProps = {
 export const Navbar = ({ email }: UserProps) => {
   return (
     <div className="flex p-2 border-b items-center justify-between gap-2">
-      <Button variant={"ghost"} size={"icon"}>
-        <MenuIcon />
-      </Button>
+      <SidebarToggle />
       {email ? (
         <div className="grow flex items-center gap-4">
           <div className="grow"> Hey, {email}!</div>

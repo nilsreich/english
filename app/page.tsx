@@ -1,7 +1,7 @@
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
-import LogoutButton from "../components/LogoutButton";
 import { Navbar } from "@/components/Navbar";
+import { Sidebar } from "@/components/Sidebar";
 
 export default async function Index() {
   const supabase = createServerComponentClient({ cookies });
@@ -11,10 +11,13 @@ export default async function Index() {
   } = await supabase.auth.getUser();
 
   return (
-    <div>
+    <div className="flex flex-col min-h-[100dvh]">
       <Navbar email={user?.email} />
 
-      <div>asd</div>
+      <div className="grow flex">
+        <Sidebar />
+        <div>maincontent</div>
+      </div>
     </div>
   );
 }
