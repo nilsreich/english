@@ -33,6 +33,7 @@
     "@radix-ui/react-tooltip": "^1.0.6",
     "@supabase/auth-helpers-nextjs": "latest",
     "@supabase/supabase-js": "latest",
+    "@tailwindcss/typography": "^0.5.10",
     "@tiptap/pm": "^2.1.8",
     "@tiptap/react": "^2.1.8",
     "@tiptap/starter-kit": "^2.1.8",

@@ -2,6 +2,7 @@ import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import { Navbar } from "@/components/Navbar";
 import { Sidebar } from "@/components/Sidebar";
+import { Editor } from "@/components/Editor";
 
 export default async function Index() {
   const supabase = createServerComponentClient({ cookies });
@@ -16,7 +17,7 @@ export default async function Index() {
 
       <div className="grow flex">
         <Sidebar />
-        <div>maincontent</div>
+        <Editor />
       </div>
     </div>
   );
