@@ -30,7 +30,7 @@ const editorProps = {
 };
 export const Editor = () => {
   return (
-    <div className="grow">
+    <div className="grow content">
       <EditorProvider
         slotBefore={<Toolbar />}
         extensions={extensions}

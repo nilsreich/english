@@ -1,6 +1,6 @@
 "use client";
 
-import { BoldIcon, ItalicIcon } from "lucide-react";
+import { BoldIcon, ItalicIcon, PrinterIcon } from "lucide-react";
 import { Button } from "../ui/button";
 import { EditorProvider, useCurrentEditor } from "@tiptap/react";
 
@@ -11,13 +11,15 @@ export const Toolbar = () => {
     return null;
   }
   return (
-    <div className=" p-1.5 border-b gap-2 grow flex">
+    <div className=" p-1.5 border-b gap-2 grow flex noprint">
       <Button
         variant={"ghost"}
         size={"sm"}
         onClick={() => editor.chain().focus().toggleBold().run()}
         disabled={!editor.can().chain().focus().toggleBold().run()}
-        className={editor.isActive("bold") ? "bg-accent text-accent-foreground" : ""}
+        className={
+          editor.isActive("bold") ? "bg-accent text-accent-foreground" : ""
+        }
       >
         <BoldIcon size={16} />
       </Button>
@@ -26,10 +28,16 @@ export const Toolbar = () => {
         size={"sm"}
         onClick={() => editor.chain().focus().toggleItalic().run()}
         disabled={!editor.can().chain().focus().toggleItalic().run()}
-        className={editor.isActive("italic") ? "bg-accent text-accent-foreground" : ""}
+        className={
+          editor.isActive("italic") ? "bg-accent text-accent-foreground" : ""
+        }
       >
         <ItalicIcon size={16} />
       </Button>
+      <div className="grow"></div>
+      <Button variant={"ghost"} size={"sm"} onClick={() => window.print()}>
+        <PrinterIcon size={16} />
+      </Button>{" "}
     </div>
   );
 };

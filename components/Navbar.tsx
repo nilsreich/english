@@ -9,7 +9,7 @@ type UserProps = {
 
 export const Navbar = ({ email }: UserProps) => {
   return (
-    <div className="flex p-2 border-b items-center justify-between gap-2">
+    <div className="flex p-2 border-b items-center justify-between gap-2 noprint">
       <SidebarToggle />
       {email ? (
         <div className="grow flex items-center gap-4">
