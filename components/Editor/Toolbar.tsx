@@ -1,6 +1,6 @@
 "use client";
 
-import { BoldIcon, ItalicIcon, PrinterIcon } from "lucide-react";
+import { BoldIcon, ItalicIcon, PrinterIcon, SaveIcon } from "lucide-react";
 import { Button } from "../ui/button";
 import { EditorProvider, useCurrentEditor } from "@tiptap/react";
 
@@ -35,6 +35,10 @@ export const Toolbar = () => {
         <ItalicIcon size={16} />
       </Button>
       <div className="grow"></div>
+      <Button size={'sm'} className="gap-4" onClick={()=>console.log(editor.getJSON())}>
+        Speichern
+        <SaveIcon size={16} />
+      </Button>
       <Button variant={"ghost"} size={"sm"} onClick={() => window.print()}>
         <PrinterIcon size={16} />
       </Button>{" "}
